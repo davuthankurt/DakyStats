@@ -15,7 +15,7 @@ final class StatsTrackerViewModel: StatsTrackerViewModelProtocol {
     
     //        39 pl, 203 superlig, 135 serie a, 61 ligue 1, 78 bundesliga, 140 la liga, 2 cl
     // 2,140,135,78,61,203
-    let leagueIds = [39]
+    let leagueIds = [39,140,135,78,61,203]
     let userDefaults = UserDefaults.standard
     
     public var leaguesGoalScorers: [[PlayerPresentation]]

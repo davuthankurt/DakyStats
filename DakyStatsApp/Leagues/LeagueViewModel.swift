@@ -14,7 +14,7 @@ final class LeagueViewModel: LeaguesViewModelProtocol {
     public var leagues: [LeagueResponse?]
     var leagueCell: [LeaguePresentation?]
     var leagueResults: [Int: LeagueResponse] = [:]
-    let leagueIds = [39]
+    let leagueIds = [39,140,135,78,61,203]
     
     init(service: AppService) {
         self.service = service
