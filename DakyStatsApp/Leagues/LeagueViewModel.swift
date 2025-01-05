@@ -50,7 +50,7 @@ extension LeagueViewModel {
             }
         }
         
-        if leagueCell.last != nil {
+        if leagueCell.allSatisfy({ $0 != nil }) {
             notify(.showLeagues)
         }
     }
@@ -70,8 +70,8 @@ extension LeagueViewModel {
     }
     
     func cellForItemAt(index: IndexPath) -> LeaguePresentation? {
-        guard let league = leagueCell[index.item]  else { return nil }
-        return league
+        guard leagues[index.item] != nil else { return nil }
+        return leagueCell[index.item]
     }
     
     private func notify(_ output: LeaguesViewModelOutput){
