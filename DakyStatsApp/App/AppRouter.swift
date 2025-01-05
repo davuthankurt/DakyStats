@@ -10,8 +10,12 @@ import FirebaseAuth
 
 final class AppRouter {
     func start(window: UIWindow){
-        let tabBarController = createTabBarController()
-        window.rootViewController = tabBarController
+        if !UserDefaults.standard.bool(forKey: "hasAcceptedTermsAndPrivacy") {
+            window.rootViewController = PrivacyBuilder.make()
+        } else {
+            let tabBarController = createTabBarController()
+            window.rootViewController = tabBarController
+        }
         window.makeKeyAndVisible()
     }
     
