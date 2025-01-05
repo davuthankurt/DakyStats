@@ -150,6 +150,7 @@ extension PlayerViewController {
         playerName.font = .systemFont(ofSize: 20, weight: .semibold)
         playerName.adjustsFontSizeToFitWidth = true
         playerName.minimumScaleFactor = 0.5
+        playerName.textAlignment = .center
         playerName.textColor = UIColor(red: 36/255, green: 54/255, blue: 66/255, alpha: 1)
         playerName.text = viewModel.setPlayerName()
         playerBox.addSubview(playerName)
@@ -173,6 +174,8 @@ extension PlayerViewController {
             playerImage.widthAnchor.constraint(equalTo: playerImage.heightAnchor),
             playerName.centerXAnchor.constraint(equalTo: playerBox.centerXAnchor),
             playerName.topAnchor.constraint(equalTo: playerImage.bottomAnchor, constant: 2),
+            playerName.leadingAnchor.constraint(equalTo: playerBox.leadingAnchor, constant: 8),
+            playerName.trailingAnchor.constraint(equalTo: playerBox.trailingAnchor, constant: -8),
             competition.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
