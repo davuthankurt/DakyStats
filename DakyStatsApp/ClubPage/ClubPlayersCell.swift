@@ -36,6 +36,7 @@ class ClubPlayersCell: UITableViewCell {
         name.text = "Name"
         name.textColor = UIColor(red: 36/255, green: 54/255, blue: 66/255, alpha: 1)
         name.adjustsFontSizeToFitWidth = true
+        name.minimumScaleFactor = 0.5
         age.text = "Age"
         age.textColor = UIColor(red: 36/255, green: 54/255, blue: 66/255, alpha: 1)
         number.text = "No"
@@ -60,16 +61,18 @@ class ClubPlayersCell: UITableViewCell {
         
         name.snp.makeConstraints { make in
             make.leading.equalTo(photo.snp.trailing).offset(10)
+            make.trailing.lessThanOrEqualTo(age.snp.leading).offset(-10)
             make.centerY.equalToSuperview()
         }
-        
+
         age.snp.makeConstraints { make in
-            make.leading.equalTo(name.snp.trailing).offset(10)
+            make.leading.greaterThanOrEqualTo(name.snp.trailing).offset(10)
+            make.trailing.lessThanOrEqualTo(position.snp.leading).offset(-10)
             make.centerY.equalToSuperview()
         }
-        
+
         position.snp.makeConstraints { make in
-            make.leading.equalTo(age.snp.trailing).offset(10)
+            make.leading.greaterThanOrEqualTo(age.snp.trailing).offset(10)
             make.trailing.equalTo(contentView.snp.trailingMargin)
             make.centerY.equalToSuperview()
         }
