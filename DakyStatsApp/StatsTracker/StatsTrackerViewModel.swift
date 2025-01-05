@@ -13,7 +13,7 @@ final class StatsTrackerViewModel: StatsTrackerViewModelProtocol {
     private let service: AppService
     var delegate: StatsTrackerViewModelDelegate?
     
-    //        39 pl, 203 superlig, 135 serie a, 61 ligue 1, 78 bundesliga, 140 la liga, 2 cl
+    // 39 pl, 203 superlig, 135 serie a, 61 ligue 1, 78 bundesliga, 140 la liga, 2 cl
     // 2,140,135,78,61,203
     let leagueIds = [39,140,135,78,61,203]
     let userDefaults = UserDefaults.standard
@@ -51,10 +51,10 @@ extension StatsTrackerViewModel {
             for await (index, leaguePresentation) in group {
                 leaguesGoalScorers[index] = leaguePresentation
             }
-        }
-        
-        if let lastLeague = leaguesGoalScorers.last, !lastLeague.isEmpty {
-            notify(.showTopScorers)
+            
+            if let lastLeague = leaguesGoalScorers.last, !lastLeague.isEmpty {
+                notify(.showTopScorers)
+            }
         }
     }
     
