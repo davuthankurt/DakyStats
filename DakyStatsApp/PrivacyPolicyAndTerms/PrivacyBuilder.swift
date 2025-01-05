@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+final class PrivacyBuilder {
+    static func make() -> PrivacyViewController {
+        let vc = PrivacyViewController()
+        vc.viewModel = PrivacyViewModel()
+        return vc
+    }
+}
